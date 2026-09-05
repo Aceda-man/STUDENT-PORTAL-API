@@ -11,7 +11,6 @@ const {
 
 
 studentRoute.post("/new-student", createStudent);
-studentRoute.get("/all-students", getAllStudents);
 studentRoute.get("/get-student/:id", getStudentById);
 studentRoute.put("/update-student/:id", updateStudent);
 studentRoute.delete("/delete-student/:id", deleteStudent);
