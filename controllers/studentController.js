@@ -1,7 +1,7 @@
-const studentModel = require("../model/studentModel");
+import studentModel from "../model/studentModel.js";
 
 //create student
-const createStudent = async (req, res) => {
+export const createStudent = async (req, res) => {
   try {
     const { name, regNo, email } = req.body;
     const student = await studentModel.create({ name, regNo, email });
@@ -30,7 +30,7 @@ const createStudent = async (req, res) => {
 
 //STUDENT GET BY ID
 
-const getStudentById = async (req, res) => {
+export const getStudentById = async (req, res) => {
   try {
     const student = await studentModel.findById(req.params.id);
     if (!student) {
@@ -46,7 +46,7 @@ const getStudentById = async (req, res) => {
 };
 
 //UPDATE STUDENT
-const updateStudent = async (req, res) => {
+export const updateStudent = async (req, res) => {
   try {
     const { name } = req.body;
     const student = await studentModel.findByIdAndUpdate(
@@ -67,7 +67,7 @@ const updateStudent = async (req, res) => {
 };
 
 //DELETE STUDENT
-const deleteStudent = async (req, res) => {
+export const deleteStudent = async (req, res) => {
   try {
     const student = await studentModel.findByIdAndDelete(req.params.id);
     if (!student) {
@@ -80,11 +80,4 @@ const deleteStudent = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-};
-
-module.exports = {
-  createStudent,
-  getStudentById,
-  updateStudent,
-  deleteStudent,
 };
