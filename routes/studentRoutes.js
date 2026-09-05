@@ -3,7 +3,6 @@ const studentRoute = express.Router();
 
 const {
   createStudent,
-  getAllStudents,
   getStudentById,
   updateStudent,
   deleteStudent

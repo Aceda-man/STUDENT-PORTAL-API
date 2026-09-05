@@ -16,7 +16,7 @@ const createStudent = async (req, res) => {
 
 //GENERAL GET
 
-const getAllStudents = async (req, res) => {
+/*const getAllStudents = async (req, res) => {
   try {
     const students = await studentModel.find();
     return res.status(200).json({
@@ -26,7 +26,9 @@ const getAllStudents = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-};
+};*/
+
+//STUDENT GET BY ID
 
 const getStudentById = async (req, res) => {
   try {
