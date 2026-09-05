@@ -1,0 +1,19 @@
+const express = require("express");
+const studentRoute = express.Router();
+
+const {
+  createStudent,
+  getAllStudents,
+  getStudentById,
+  updateStudent,
+  deleteStudent
+} = require("../controllers/studentController");
+
+
+studentRoute.post("/new-student", createStudent);
+studentRoute.get("/all-students", getAllStudents);
+studentRoute.get("/get-student/:id", getStudentById);
+studentRoute.put("/update-student/:id", updateStudent);
+studentRoute.delete("/delete-student/:id", deleteStudent);
+
+module.exports = studentRoute;
